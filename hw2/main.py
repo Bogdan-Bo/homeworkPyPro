@@ -1,14 +1,9 @@
 import random
 import string
-import csv
-import pandas as pd
-import numpy as np
-import requests
-from database_handler import execute_query
-import string
 
+import pandas as pd
 from faker import Faker
-from flask import Flask, render_template, url_for
+from flask import Flask
 
 app = Flask(__name__)
 fake = Faker('ru_RU')
@@ -28,4 +23,7 @@ def generator_password():
 def get_avarage_parametrs():
     dataset = pd.read_csv('hw.csv')
     avarage = dataset.mean()
-    return f'Avarage Height: {avarage.values[1:2]}, Avarage Weight: {avarage.values[2:1]}'
+    return (
+        f'Avarage Height: {round(avarage[" Height(Inches)"], 2)}, '
+        f'Avarage Weight: {round(avarage[" Weight(Pounds)"])}'
+    )
