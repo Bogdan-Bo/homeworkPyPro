@@ -8,7 +8,7 @@ from database_handler import execute_query
 
 from faker import Faker
 from flask import Flask, render_template, url_for
-import pprint
+
 
 app = Flask(__name__)
 fake = Faker('ru_RU')
@@ -63,7 +63,7 @@ def get_customers():
 
     records = execute_query(query)
     return records
-
+print('hello World')
 
 if __name__ == '__main__':
     app.run(debug=True)
