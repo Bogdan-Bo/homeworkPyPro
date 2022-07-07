@@ -63,7 +63,7 @@ def get_customers():
 
     records = execute_query(query)
     return records
-print('hello World')
 
+print('hello world')
 if __name__ == '__main__':
     app.run(debug=True)
